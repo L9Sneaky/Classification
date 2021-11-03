@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as pplt
+import matplotlib.pyplot as plt
 import seaborn as sns
 from pandas.plotting import scatter_matrix
 
@@ -17,7 +17,13 @@ df.rename(columns={'capital-gain': 'capital gain', 'capital-loss': 'capital loss
 df
 
 df['country'].unique()
+#%%
+plt.subplot(1,2,1)
+sns.boxplot(df['capital gain'])
+plt.subplot(1,2,2)
+sns.boxplot(df['hours per week'])
 
+#%%
 print(f"{df[df['capital gain'] == 99999].shape[0]} outlier in the capital-gain")
 print(f"{df[df['hours per week'] == 99].shape[0]} outlier in the hours-per-week")
 
@@ -25,6 +31,8 @@ df['capital gain'].replace(99999, np.mean(df['capital gain'].values), inplace=Tr
 df['hours per week'].replace(99, np.mean(df['hours per week'].values), inplace=True)
 
 df["income"].value_counts()/len(df["income"])
+#%%
+sns.heatmap(df.corr(), annot=True, linewidths=.5)
 
 #%% Mapping
 
@@ -169,8 +177,8 @@ def decision_tree(X_train, y_train):
 
     return grid_clf.best_estimator_
 
-rad_boost_clr = decision_tree(X_up_train, y_up_train)
-y_pred = evaluation(grad_boost_clr, X_up_train, y_up_train, X_test, y_test, is_NN=False)
+dtree = decision_tree(X_up_train, y_up_train)
+y_pred = evaluation(dtree, X_up_train, y_up_train, X_test, y_test, is_NN=False)
 confusion(y_test, y_pred)
 
 
@@ -209,8 +217,8 @@ def knn(X_train, y_train):
 
     return grid_clf.best_estimator_
 
-knn_clr = knn(X_train, y_train)
-y_pred = evaluation(knn_clr, X_train, y_train, X_test, y_test, is_NN=False)
+knn_clr = knn(X_up_train, y_up_train)
+y_pred = evaluation(knn_clr, X_up_train, y_up_train, X_test, y_test, is_NN=False)
 confusion(y_test, y_pred)
 
 #%% cross val
@@ -234,7 +242,7 @@ for i in models:
     std.append(cv_result.std())
     accuracy.append(cv_result)
 models_dataframe=pd.DataFrame({'CV Mean':xyz,'Std':std},index=classifiers)
-models_dataframe
+models_dataframe['CV Mean']
 
 #%% ROC comparison
 from sklearn.metrics import plot_roc_curve
@@ -244,3 +252,14 @@ plot_roc_curve(knn_clr, X_test, y_test, ax=disp.ax_)
 plot_roc_curve(random_for, X_test, y_test, ax=disp.ax_)
 
 pplt.show()
+#%%
+X.info()
+#gender    / 'Female':0, 'Male':1
+#race   /   'White':0, 'Black':1, 'Asian-Pac-Islander':2, 'Amer-Indian-Eskimo':3
+#marital  / 'Widowed':0, 'Divorced':1, 'Separated':2,'Never-married':3,'Married-civ-spouse':4, 'Married-spouse-absent':5, 'Married-AF-spouse':6
+#relationship / 'Not-in-family':0, 'Unmarried':0, 'Own-child':0, 'Other-relative':0,'Husband':1, 'Wife':1
+#workclass /  ?':0, 'Private':1, 'State-gov':2, 'Federal-gov':3,'Self-emp-not-inc':4, 'Self-emp-inc': 5, 'Local-gov': 6,'Without-pay':7, 'Never-worked':8
+#country    /    x:   x == "United-States" 1 else 0)
+#income     /    <=50K':0, '>50K': 1
+X['country']
+random_for.predict(np.array([20,6,4856,9,0,1,1,100,0,15,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0]).reshape(1, -1))
