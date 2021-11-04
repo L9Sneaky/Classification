@@ -22,6 +22,10 @@ plt.subplot(1,2,1)
 sns.boxplot(df['capital gain'])
 plt.subplot(1,2,2)
 sns.boxplot(df['hours per week'])
+#%%
+num_ix = df.select_dtypes(include=['int64', 'float64']).columns
+subset = df[num_ix]
+subset.hist()
 
 #%%
 print(f"{df[df['capital gain'] == 99999].shape[0]} outlier in the capital-gain")
@@ -119,7 +123,7 @@ def confusion(y_true, y_pred):
 
     confusion_mat = confusion_matrix(y_true, y_pred)
     confusion_df = pd.DataFrame(confusion_mat)
-    pplt.figure(figsize=(8,8))
+    plt.figure(figsize=(8,8))
     sns.heatmap(confusion_df, annot=True)
 
 from sklearn.linear_model import LogisticRegression
@@ -131,7 +135,8 @@ from imblearn.over_sampling import SMOTE
 
 sm = SMOTE(random_state=0)
 X_up_train, y_up_train = sm.fit_resample(X_train, y_train)
-
+X_up_train.shape
+X_test.shape
 y_up_train.value_counts()
 
 #%% normalize the data
