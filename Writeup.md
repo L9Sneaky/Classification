@@ -12,8 +12,8 @@ The goal of this project was to use classification to predict the salary bracket
 
 ### Design
 
-This project originated from our passion for football and FIFA game. The data is provided by our web scraper. We used the data from fifindex.com to build our model that'll be able to predict future players overall rating.
-
+<!-- Add this
+     Refer to the success guide --> 
 ### Data
 
 Adults Salary dataset contains 48,000 data points and 15 features for each data point. A few feature highlights include Age, Gender, Work Class, Education and Marital Status. Our target feature is salary.
