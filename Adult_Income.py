@@ -205,6 +205,7 @@ def random_forest(X_train, y_train):
 
 random_for = random_forest(X_up_train, y_up_train)
 y_pred = evaluation(random_for, X_up_train, y_up_train, X_test, y_test, is_NN=False)
+
 confusion(y_test, y_pred)
 
 #%% KNN
@@ -268,3 +269,10 @@ X.info()
 #income     /    <=50K':0, '>50K': 1
 X['country']
 random_for.predict(np.array([20,6,4856,9,0,1,1,100,0,15,1,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0]).reshape(1, -1))
+
+
+from sklearn.metrics import accuracy_score,precision_score, recall_score, precision_recall_curve,f1_score, fbeta_score
+print("Accuracy:",accuracy_score(y_test, y_pred))
+print("Precision:",precision_score(y_test, y_pred))
+print("Recall:",recall_score(y_test, y_pred))
+print("F1 score:",f1_score(y_test, y_pred))
