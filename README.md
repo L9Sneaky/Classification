@@ -6,7 +6,7 @@ The goal of this project was to use classification to predict the salary bracket
 ### Table of Contents:
 
 -   [Project Proposal](Proposal.ipynb)
--   Classification [Modeling](Adults_income.ipynb)
+-   Classification [Modeling](Adult_Income.ipynb)
 -   [Slides](Adult_Salary_Prediction.pdf)
 -   [Writeup](Writeup.md)
 
