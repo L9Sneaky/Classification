@@ -43,8 +43,6 @@ Logistic regression, k-nearest neighbors, and random forest classifiers were use
 We split into 80/20 train and test respectively. The training dataset has 39073 data points and the test dataset has 9769 data points after the test/train split. All scores reported below were calculated with 10-fold cross validation on the training portion only.
 
 
-###### Random Forest
-
 | Algorithm           | Accuracy | Precision | Recall | F-1 Score | ROC-AUC Score |
 | ------------------- | -------- | --------- | ------ | --------- | ------------- |
 | Logistic Regression | 0.7920   | 0.5566    | 0.8404 | 0.6697    | 0.90          |
@@ -54,7 +52,6 @@ We split into 80/20 train and test respectively. The training dataset has 39073 
 
 <!-- Insert ROC CURVE PLOT -->
 ![ROC Curve](ROC.png)
-
 
 ### Tools
 
