@@ -45,14 +45,16 @@ We split into 80/20 train and test respectively. The training dataset has 39073 
 
 ###### Random Forest
 
-| Algorithm | Accuracy  | Precision | Recall | F-1 Score | ROC-AUC Score |
-| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-| Logistic Regression | 0.7919  | 0.892  | 0.891 | 0.889  |
-| K-Nearest Neighbors| 0.7957  | 0.891  | 0.891 | 0.889  |
-| Decision Tree | 0.81389 | 0.889  | 0.892  | 0.891 | 0.889  |
-| Random Forest | 0.8549 | 0.889  | 0.892  | 0.891 | 0.889  |
+| Algorithm           | Accuracy | Precision | Recall | F-1 Score | ROC-AUC Score |
+| ------------------- | -------- | --------- | ------ | --------- | ------------- |
+| Logistic Regression | 0.7920   | 0.5566    | 0.8404 | 0.6697    | 0.90          |
+| Decision Tree       | 0.8138   | 0.5881    | 0.6390 | 0.6125    | 0.75          |
+| K-Nearest Neighbors | 0.7957   | 0.5321    | 0.8293 | 0.6482    | 0.89          |
+| Random Forest       | 0.8560   | 0.5645    | 0.8468 | 0.6775    | 0.91          |   
 
 <!-- Insert ROC CURVE PLOT -->
+![ROC Curve](ROC.png)
+
 
 ### Tools
 
