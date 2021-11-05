@@ -52,7 +52,7 @@ We split into 80/20 train and test respectively. The training dataset has 39073 
 | Random Forest       | 0.8560   | 0.5645    | 0.8468 | 0.6775    | 0.91          |   
 
 <!-- Insert ROC CURVE PLOT -->
-![ROC Curve](ROC.png)
+![ROC Curve](charts/ROC.png)
 
 ### Tools
 
