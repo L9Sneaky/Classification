@@ -26,7 +26,8 @@ After cleaning the data, removing outliers, applying feature engineering, replac
 
 -   Removed outliers.
 
--   Mapped categorical features into numerical.
+-   Mapped categorical f
+eatures into numerical.
 
 -   Replaced NaN values with mode.
 
