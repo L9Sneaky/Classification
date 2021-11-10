@@ -1,4 +1,4 @@
-# Classification on FIFA Adult Salary Prediction
+# Classification on Adult Salary Prediction
 
 The goal of this project was to use classification to predict the salary bracket of adults(>$50k or <$50k). We worked with the data from <https://www.census.gov/> , leveraging feature Selection, feature engineering, dummy variables, SMOTE. Then, we built  Logistic Regression, K-Nearest Neighbors, Decision Tree and Random Forest models. We concluded by comparing between the accuracy of each model.
 
